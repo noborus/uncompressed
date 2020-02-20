@@ -13,4 +13,4 @@ Uncompressed judging from the magic number of the first few bytes of the file.
     r.Read(p)
 ```
 
-See [_examples/zzcat](blob/master/_examples/zzcat/) for more details.
+See [_examples/zzcat](_examples/zzcat/main.go) for more details.
