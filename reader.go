@@ -1,16 +1,18 @@
+// Package uncompressed provides a reader to uncompress the compressed data.
+//
+// Read the first magic number of the data
+// and select the appropriate uncompressed reader.
 package uncompressed
 
 import (
 	"bytes"
 	"compress/bzip2"
-	"context"
 	"io"
 
 	"github.com/klauspost/compress/gzip"
 	"github.com/klauspost/compress/zstd"
 	"github.com/pierrec/lz4"
 	"github.com/ulikunitz/xz"
-	"google.golang.org/appengine/log"
 )
 
 // Reader implements uncompressed reader for an io.Reader object.
@@ -24,9 +26,10 @@ func NewReader(reader io.Reader) *Reader {
 	n, err := io.ReadAtLeast(reader, buf[:], len(buf))
 	if err != nil {
 		if err != io.EOF && err != io.ErrUnexpectedEOF {
-			ctx := context.TODO()
-			log.Infof(ctx, "fatal:%v", err)
-			return nil
+			// Should errors not happen?
+			return &Reader{
+				rd: bytes.NewReader(nil),
+			}
 		}
 	}
 	rd := io.MultiReader(bytes.NewReader(buf[:n]), reader)
