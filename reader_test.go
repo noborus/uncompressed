@@ -113,23 +113,3 @@ func TestFileReader(t *testing.T) {
 		})
 	}
 }
-
-func TestNewReader(t *testing.T) {
-	type args struct {
-		reader io.Reader
-	}
-	tests := []struct {
-		name string
-		args args
-		want *Reader
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			if got := NewReader(tt.args.reader); !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("NewReader() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}

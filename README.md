@@ -1,5 +1,7 @@
 # uncompressed Reader
 
+![Go](https://github.com/noborus/uncompressed/workflows/Go/badge.svg)
+
 Uncompressed provides uncompressed reader from various compressed readers.
 
 Uncompressed reader identifies the file from the magic number in the first few bytes.
