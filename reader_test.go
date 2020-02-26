@@ -77,7 +77,7 @@ func TestFileReader(t *testing.T) {
 		},
 		{
 			name: "bzip2",
-			args: args{"test.txt.bzip2"},
+			args: args{"test.txt.bz2"},
 			want: []byte("test\n"),
 		},
 		{
@@ -87,7 +87,7 @@ func TestFileReader(t *testing.T) {
 		},
 		{
 			name: "zstd",
-			args: args{"test.txt.zstd"},
+			args: args{"test.txt.zst"},
 			want: []byte("test\n"),
 		},
 		{
