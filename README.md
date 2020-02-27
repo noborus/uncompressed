@@ -2,7 +2,7 @@
 
 ![Go](https://github.com/noborus/uncompressed/workflows/Go/badge.svg)
 
-No need to import. Reference implementation.
+## No need to import. Reference implementation.
 
 Uncompressed provides uncompressed reader from various compressed readers.
 
